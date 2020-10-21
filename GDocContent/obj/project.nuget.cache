@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "aTtYxomijNASCCMHqzvdzw3nCm7tOV/7KeoFk7iwBTAeWCYAFH/PkT9pJQvlyQor9QdGo3Px7ZbQwEkGNV2aZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LeGault\\source\\repos\\gdoc\\GDocContent\\GDocContent.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LeGault\\.nuget\\packages\\google.apis\\1.49.0\\google.apis.1.49.0.nupkg.sha512",
+    "C:\\Users\\LeGault\\.nuget\\packages\\google.apis.auth\\1.49.0\\google.apis.auth.1.49.0.nupkg.sha512",
+    "C:\\Users\\LeGault\\.nuget\\packages\\google.apis.core\\1.49.0\\google.apis.core.1.49.0.nupkg.sha512",
+    "C:\\Users\\LeGault\\.nuget\\packages\\google.apis.docs.v1\\1.49.0.2108\\google.apis.docs.v1.1.49.0.2108.nupkg.sha512",
+    "C:\\Users\\LeGault\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
