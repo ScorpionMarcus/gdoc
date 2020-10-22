@@ -9,12 +9,12 @@ using System.Threading;
 
 namespace GDocContent
 {
-    class GDocData
+    class Data
     {
         static string[] Scopes = { DocsService.Scope.DocumentsReadonly };
         static string ApplicationName = "Google Docs API .NET Quickstart";
 
-        public static void Run()
+        public static void Retrieve()
         {
             UserCredential credential;
 
@@ -46,18 +46,7 @@ namespace GDocContent
             // https://docs.google.com/document/d/195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE
             Document doc = request.Execute();
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test.txt";
-
-            Console.WriteLine("Creating file test.txt located at " + path);
-            
-            // Skims through json results for content
-            foreach (var item in doc.Body.Content)
-            {
-                if (item.Paragraph != null)
-                {
-                    File.AppendAllText(path, item.Paragraph.Elements[0].TextRun.Content);
-                }
-            }
+            formatUtil.Format(doc);
         }
     }
 }
