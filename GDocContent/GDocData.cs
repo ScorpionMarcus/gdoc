@@ -4,13 +4,8 @@ using Google.Apis.Docs.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Runtime.CompilerServices;
-using System.Linq;
 
 namespace GDocContent
 {
@@ -48,28 +43,19 @@ namespace GDocContent
             String documentId = "1qAnB3vcKDsSuwFmRB0gtDyepFx60t1CdI9hbKAvCXQc";
             DocumentsResource.GetRequest request = service.Documents.Get(documentId);
 
-            // Prints the title of the requested doc:
             // https://docs.google.com/document/d/195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE
             Document doc = request.Execute();
 
-            string jsonString = JsonSerializer.Serialize(doc);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\test.txt";
 
-            // downloads the full json for review
-            string path = @"c:\temp\test.json";
-
-            if (!File.Exists(path))
-            {
-                File.WriteAllText(path, jsonString);
-            }
-
-            var count = 0;
-
+            Console.WriteLine("Creating file test.txt located at " + path);
+            
+            // Skims through json results for content
             foreach (var item in doc.Body.Content)
             {
                 if (item.Paragraph != null)
                 {
-                    Console.WriteLine(item.Paragraph.Elements[0].TextRun.Content);
-                    count += 1;
+                    File.AppendAllText(path, item.Paragraph.Elements[0].TextRun.Content);
                 }
             }
         }
