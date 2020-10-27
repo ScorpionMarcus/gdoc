@@ -7,7 +7,7 @@ namespace GDocContent
 {
     class fileUtil
     {
-        public static void createFiles(Document doc)
+        public static void createFile(Document doc)
         {
             Random rnd = new Random();
             int job = rnd.Next(1, 50000);
@@ -31,6 +31,7 @@ namespace GDocContent
                 {
                     if (item.Paragraph.ParagraphStyle.NamedStyleType == "NORMAL_TEXT" && item.Paragraph.Elements[0].TextRun.Content != "\n")
                     {
+                        //File.AppendAllText(content, "<p>" + formatUtil.format(doc, item.Paragraph.Elements[0].TextRun.Content) + "</p>");
                         File.AppendAllText(content, "<p>" + item.Paragraph.Elements[0].TextRun.Content + "</p>");
                     }
                     else if (item.Paragraph.ParagraphStyle.NamedStyleType == "HEADING_1")

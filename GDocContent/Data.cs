@@ -46,7 +46,7 @@ namespace GDocContent
             // https://docs.google.com/document/d/195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE
             Document doc = request.Execute();
 
-            fileUtil.createFiles(doc);
+            fileUtil.createFile(doc);
         }
     }
 }
